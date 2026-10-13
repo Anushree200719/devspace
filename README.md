@@ -68,3 +68,79 @@ int main()
     return 0;
 }
 ```
+
+---
+
+# Question 2: Find the Larger Number
+
+## Problem Statement
+Given two integers `a` and `b`, find the larger number. If both numbers are equal, display `"Both numbers are equal"`.
+
+## 1. Input
+Two integers `a` and `b` (represented as `long long` in C++).
+
+### Test Cases
+- `5 23`
+- `10 4`
+- `-2 -8`
+- `7 7`
+- `0 -3`
+
+---
+
+## 2. Expected Output
+Print the larger number, or `"Both numbers are equal"` if `a` and `b` are equal.
+
+| Input | Expected Output |
+| :--- | :--- |
+| `5 23` | `23` |
+| `10 4` | `10` |
+| `-2 -8` | `-2` |
+| `7 7` | `Both numbers are equal` |
+| `0 -3` | `0` |
+
+---
+
+## 3. Logic
+Compare the two numbers `a` and `b` using conditional statements:
+- If `a > b`, `a` is strictly greater than `b`, so output `a`.
+- Else if `b > a`, `b` is strictly greater than `a`, so output `b`.
+- Else (`a == b`), both numbers are equal, so output `"Both numbers are equal"`.
+
+---
+
+## 4. Algorithm/Steps
+1. **Start**
+2. Declare two 64-bit integer variables `a` and `b` of type `long long`.
+3. Read the two integers from standard input (`cin >> a >> b`).
+4. Check if `a > b`:
+   - If true, print `a`.
+5. Else if `b > a`:
+   - If true, print `b`.
+6. Else:
+   - Print `"Both numbers are equal"`.
+7. Exit the program with return code `0`.
+
+---
+
+## 5. Source Code
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    long long a, b;
+    cin >> a >> b;
+
+    if (a > b)
+        cout << a << endl;
+    else if (b > a)
+        cout << b << endl;
+    else
+        cout << "Both numbers are equal" << endl;
+
+    return 0;
+}
+```
