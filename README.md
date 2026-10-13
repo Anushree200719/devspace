@@ -220,3 +220,75 @@ int main()
     return 0;
 }
 ```
+
+---
+
+# Question 4: Sum of First N Natural Numbers
+
+## Problem Statement
+Given an integer `n`, calculate the sum of the first $n$ natural numbers: $1 + 2 + 3 + \dots + n$.
+
+## 1. Input
+A single integer `n` (represented as `long long` in C++).
+
+### Test Cases
+- `5`
+- `1`
+- `0`
+- `10`
+- `100`
+
+---
+
+## 2. Expected Output
+Print the resulting sum of numbers from 1 to `n`.
+
+| Input | Expected Output |
+| :--- | :--- |
+| `5` | `15` |
+| `1` | `1` |
+| `0` | `0` |
+| `10` | `55` |
+| `100` | `5050` |
+
+---
+
+## 3. Logic
+- Initialize a running sum accumulator `sum = 0`.
+- Iterate through each integer $i$ starting from 1 up to $n$ (`for (long long i = 1; i <= n; i++)`).
+- In each iteration, add $i$ to `sum` (`sum += i`).
+- After the loop completes, output the final accumulated `sum`.
+- If $n \le 0$, the loop body does not execute, correctly outputting `0`.
+
+---
+
+## 4. Algorithm/Steps
+1. **Start**
+2. Declare two 64-bit integer variables `n` and `sum = 0` of type `long long`.
+3. Read the integer `n` from standard input (`cin >> n`).
+4. Initialize a counter loop from `i = 1` up to `n`:
+   - In each step, add `i` to `sum`.
+5. Print the value of `sum` to standard output.
+6. Terminate the program with return code `0`.
+
+---
+
+## 5. Source Code
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    long long n, sum = 0;
+    cin >> n;
+
+    for (long long i = 1; i <= n; i++)
+        sum += i;
+
+    cout << sum << endl;
+
+    return 0;
+}
+```
