@@ -144,3 +144,79 @@ int main()
     return 0;
 }
 ```
+
+---
+
+# Question 3: Positive, Negative or Zero
+
+## Problem Statement
+Given an integer `n`, determine whether it is Positive, Negative, or Zero.
+
+## 1. Input
+A single integer `n` (represented as `long long` in C++).
+
+### Test Cases
+- `7`
+- `-7`
+- `0`
+- `-100`
+- `999999999999`
+
+---
+
+## 2. Expected Output
+Print `"Positive"` if the number is greater than zero, `"Negative"` if less than zero, or `"Zero"` if equal to zero.
+
+| Input | Expected Output |
+| :--- | :--- |
+| `7` | `Positive` |
+| `-7` | `Negative` |
+| `0` | `Zero` |
+| `-100` | `Negative` |
+| `999999999999` | `Positive` |
+
+---
+
+## 3. Logic
+Compare the integer `n` against zero using conditional branching:
+- If `n > 0`, the number is strictly greater than zero, so output `"Positive"`.
+- Else if `n < 0`, the number is strictly less than zero, so output `"Negative"`.
+- Else (`n == 0`), the number is zero, so output `"Zero"`.
+
+---
+
+## 4. Algorithm/Steps
+1. **Start**
+2. Declare a 64-bit integer variable `n` of type `long long`.
+3. Read the integer from standard input (`cin >> n`).
+4. Check if `n > 0`:
+   - If true, print `"Positive"`.
+5. Else if `n < 0`:
+   - If true, print `"Negative"`.
+6. Else:
+   - Print `"Zero"`.
+7. Exit the program with return code `0`.
+
+---
+
+## 5. Source Code
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    long long n;
+    cin >> n;
+
+    if (n > 0)
+        cout << "Positive" << endl;
+    else if (n < 0)
+        cout << "Negative" << endl;
+    else
+        cout << "Zero" << endl;
+
+    return 0;
+}
+```
