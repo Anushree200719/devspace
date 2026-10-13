@@ -292,3 +292,90 @@ int main()
     return 0;
 }
 ```
+
+---
+
+# Question 5: Reverse a Number
+
+## Problem Statement
+Given an integer `n`, reverse its digits.
+
+## 1. Input
+A single integer `n` (represented as `int` in C++).
+
+### Test Cases
+- `12345`
+- `1200`
+- `7`
+- `0`
+- `-123`
+- `-2147483648`
+
+---
+
+## 2. Expected Output
+Print the reversed number.
+
+| Input | Expected Output |
+| :--- | :--- |
+| `12345` | `54321` |
+| `1200` | `21` |
+| `7` | `7` |
+| `0` | `0` |
+| `-123` | `-321` |
+| `-2147483648` | `-8463847412` |
+
+---
+
+## 3. Logic
+- Initialize a variable `reverse = 0` of type `long long` to prevent potential 32-bit integer overflow when reversing large numbers.
+- While `n != 0`:
+  - Extract the last digit: `digit = n % 10`.
+  - Shift existing digits in `reverse` left by 10 and add `digit`: `reverse = reverse * 10 + digit`.
+  - Truncate the last digit of `n`: `n = n / 10`.
+- When `n` becomes 0, the loop terminates.
+- Display `reverse`.
+- For trailing zeros (e.g. `1200`), reversing naturally strips leading zeros resulting in `21`. Negative numbers retain the negative sign (e.g. `-123` -> `-321`).
+
+---
+
+## 4. Algorithm/Steps
+1. **Start**
+2. Declare an integer variable `n` of type `int`.
+3. Declare `reverse = 0` of type `long long`.
+4. Read the integer `n` from standard input (`cin >> n`).
+5. Execute a `while (n != 0)` loop:
+   - Calculate `digit = n % 10`.
+   - Update `reverse = reverse * 10 + digit`.
+   - Update `n = n / 10`.
+6. Print the value of `reverse` to standard output.
+7. Terminate the program with return code `0`.
+
+---
+
+## 5. Source Code
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+
+    long long reverse = 0;
+
+    while (n != 0)
+    {
+        int digit = n % 10;
+        reverse = reverse * 10 + digit;
+        n = n / 10;
+    }
+
+    cout << reverse << endl;
+
+    return 0;
+}
+```
+
